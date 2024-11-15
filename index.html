@@ -10,27 +10,31 @@
             padding: 0;
             font-family: 'Georgia', serif;
             color: #2c3e50;
-            background-color: #f4f4f4;
+            background: linear-gradient(120deg, #f7f1e3, #dcdde1);
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #283593;
+            background: radial-gradient(circle at center, #34495e, #283593);
             color: white;
             text-align: center;
-            padding: 50px 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 60px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
+            letter-spacing: 2px;
             margin: 0;
+            animation: popIn 1s ease-out;
         }
         header p {
-            font-size: 1.2em;
+            font-size: 1.4em;
             margin: 10px 0 0;
+            animation: fadeIn 1.5s ease-out;
         }
 
         nav {
-            background-color: #34495e;
+            background: #2c3e50;
             display: flex;
             justify-content: center;
             position: sticky;
@@ -42,55 +46,100 @@
             color: white;
             text-decoration: none;
             padding: 15px 20px;
-            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            transition: color 0.3s, transform 0.3s;
         }
         nav a:hover {
-            background-color: #1abc9c;
+            color: #1abc9c;
             transform: scale(1.1);
         }
 
         section {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transform: scale(0.95);
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateX(-1deg);
+            animation: slideUp 1.2s ease-out;
+            animation-delay: 0.3s;
+            animation-fill-mode: forwards;
             opacity: 0;
-            animation: slideIn 1s forwards;
-            margin-bottom: 20px;
         }
         section h2 {
             color: #283593;
             margin-bottom: 15px;
-            font-size: 1.8em;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
-        section p {
-            font-size: 1.1em;
+        section p, section ul {
+            font-size: 1.2em;
             line-height: 1.8;
-            margin: 0 0 15px;
+            margin-bottom: 15px;
         }
         section ul {
-            list-style: disc;
+            list-style: square;
             padding-left: 20px;
         }
+        section ul li {
+            margin-bottom: 10px;
+        }
 
-        @keyframes slideIn {
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px) rotateX(-3deg);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) rotateX(0);
             }
         }
-        section:nth-child(even) {
-            animation-delay: 0.3s;
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
-        section:nth-child(odd) {
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        section:nth-child(even) {
+            background: linear-gradient(to right, #f7f7f7, #fff);
             animation-delay: 0.6s;
+        }
+
+        nav a:hover {
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        section:hover {
+            transform: perspective(1000px) rotateY(1deg) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header::after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 4px;
+            background: #1abc9c;
+            margin: 20px auto 0;
         }
     </style>
 </head>
@@ -98,14 +147,14 @@
 
     <header>
         <h1>Welcome to Auce, Latvia</h1>
-        <p>Discover the beauty, culture, and history of this charming town.</p>
+        <p>Your journey to history, culture, and beauty begins here.</p>
     </header>
 
     <nav>
         <a href="#history">History</a>
         <a href="#geography">Geography</a>
         <a href="#getting-there">How to Reach</a>
-        <a href="#tourist-attractions">Tourist Attractions</a>
+        <a href="#tourist-attractions">Attractions</a>
         <a href="#weather">Weather</a>
         <a href="#culture">Culture</a>
         <a href="#food-music">Food & Music</a>
@@ -114,50 +163,53 @@
 
     <section id="history">
         <h2>History of Auce</h2>
-        <p>Auce's history dates back to the 15th century when it was part of the Duchy of Courland and Semigallia. Over centuries, it transitioned under various powers, including the Russian Empire and independent Latvia in the 20th century. The town retains its historical charm with buildings reflecting its Baltic and Latvian heritage.</p>
+        <p>Auce's origins trace back to medieval times when it was part of the Duchy of Courland and Semigallia. Its rich heritage includes centuries of trade, agriculture, and cultural exchange. The town endured through occupations and independence struggles, shaping its unique identity.</p>
     </section>
 
     <section id="geography">
         <h2>Geography</h2>
-        <p>Auce is located in the Zemgale region, known for its fertile lands and natural beauty. The town is surrounded by flat farmlands, small forests, and the picturesque Lielupe River. Its proximity to the Lithuanian border adds to its geographic appeal for visitors.</p>
+        <p>Nestled in Latvia's Zemgale region, Auce boasts fertile lands and scenic landscapes. Surrounded by rolling hills and dotted with lush forests, it's an idyllic location. The nearby Lielupe River adds to its charm, offering visitors picturesque views and outdoor activities.</p>
     </section>
 
     <section id="getting-there">
         <h2>How to Reach Auce</h2>
-        <p><b>By Car:</b> Drive via the A9 highway from Riga to reach Auce in about 1.5 hours.</p>
-        <p><b>By Train:</b> Take a train from Riga to Jelgava, then transfer to a connecting train or bus to Auce.</p>
-        <p><b>By Bus:</b> Direct buses from Riga to Auce offer a comfortable and scenic journey.</p>
+        <p>Auce is accessible by various modes of transportation:</p>
+        <ul>
+            <li><b>By Car:</b> A scenic 1.5-hour drive from Riga on the A9 highway.</li>
+            <li><b>By Train:</b> Take a train from Riga to Jelgava, then connect to Auce via bus or train.</li>
+            <li><b>By Bus:</b> Regular buses operate between Riga and Auce, offering a budget-friendly option.</li>
+        </ul>
     </section>
 
     <section id="tourist-attractions">
         <h2>Tourist Attractions</h2>
         <ul>
-            <li><b>Auce Old Town:</b> Stroll through historical streets and admire traditional architecture.</li>
-            <li><b>Auce Manor:</b> Visit this historic estate with beautiful gardens.</li>
-            <li><b>The Lielupe River:</b> Enjoy serene walks or picnics along this scenic river.</li>
-            <li><b>Local Museums:</b> Explore small but rich museums that celebrate Auce's culture and history.</li>
+            <li><b>Auce Old Town:</b> A journey through cobblestone streets and historic architecture.</li>
+            <li><b>Auce Manor:</b> An elegant estate surrounded by manicured gardens.</li>
+            <li><b>The Lielupe River:</b> A haven for nature enthusiasts and tranquility seekers.</li>
+            <li><b>Local Museums:</b> Discover unique artifacts and stories from Auce's past.</li>
         </ul>
     </section>
 
     <section id="weather">
         <h2>Weather</h2>
-        <p>Auce has a temperate climate. Summers are warm with temperatures ranging from 15°C to 25°C, while winters are cold and snowy, often below 0°C. Spring and autumn provide mild and pleasant conditions for visitors.</p>
+        <p>Auce enjoys a temperate climate with distinct seasons. Summers are warm (15°C-25°C), perfect for exploring. Winters are snowy, with temperatures often dropping below freezing. Spring and autumn offer mild weather, ideal for sightseeing.</p>
     </section>
 
     <section id="culture">
         <h2>Culture</h2>
-        <p>Auce’s cultural heritage is a blend of Latvian and Baltic traditions. Local festivals such as Midsummer celebrations, folk music performances, and craft fairs showcase the town’s rich history and vibrant community spirit.</p>
+        <p>Auce is a hub of Latvian traditions, from folklore to modern festivities. Experience traditional Midsummer celebrations, immerse in folk music, and explore craftsmanship passed down through generations.</p>
     </section>
 
     <section id="food-music">
         <h2>Food & Music</h2>
-        <p>Enjoy traditional Latvian cuisine, including hearty dishes like grey peas with bacon and freshly baked rye bread. Music plays a vital role in local culture, with folk songs and the use of the traditional kokle instrument during festivals and events.</p>
+        <p>Indulge in local cuisine, including hearty soups, smoked meats, and rye bread. Music is central to Auce's identity, with folk instruments like the kokle and contemporary performances making every event special.</p>
     </section>
 
     <section id="travel-time">
         <h2>Travel Time</h2>
         <p><b>From Riga:</b> 1.5 hours by car or approximately 2 hours by train and bus.</p>
-        <p><b>From Vilnius:</b> About 3 hours by car, making Auce a convenient destination for travelers from Lithuania.</p>
+        <p><b>From Vilnius:</b> A 3-hour journey by car, making it easily accessible for cross-border visitors.</p>
     </section>
 
 </body>
