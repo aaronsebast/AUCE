@@ -6,70 +6,91 @@
     <title>Auce, Latvia</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            color: #333;
             margin: 0;
             padding: 0;
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+            background-color: #f4f4f4;
         }
 
         header {
-            background-color: #4CAF50;
+            background-color: #283593;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 50px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
         }
 
         nav {
+            background-color: #34495e;
             display: flex;
             justify-content: center;
-            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         nav a {
             color: white;
-            padding: 10px 15px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            padding: 15px 20px;
+            transition: background-color 0.3s, transform 0.3s;
         }
         nav a:hover {
-            background-color: #4CAF50;
+            background-color: #1abc9c;
+            transform: scale(1.1);
         }
-        
+
         section {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 30px auto;
             padding: 20px;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        section:hover {
-            transform: scale(1.02);
-        }
-
-        h2 {
-            color: #4CAF50;
-        }
-
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .fade-in {
+            transform: scale(0.95);
             opacity: 0;
-            animation: fadeIn 2s forwards;
+            animation: slideIn 1s forwards;
+            margin-bottom: 20px;
+        }
+        section h2 {
+            color: #283593;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 0 0 15px;
+        }
+        section ul {
+            list-style: disc;
+            padding-left: 20px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        section:nth-child(even) {
+            animation-delay: 0.3s;
+        }
+        section:nth-child(odd) {
+            animation-delay: 0.6s;
         }
     </style>
 </head>
@@ -77,7 +98,7 @@
 
     <header>
         <h1>Welcome to Auce, Latvia</h1>
-        <p>Discover the charm, history, and attractions of Auce.</p>
+        <p>Discover the beauty, culture, and history of this charming town.</p>
     </header>
 
     <nav>
@@ -88,54 +109,56 @@
         <a href="#weather">Weather</a>
         <a href="#culture">Culture</a>
         <a href="#food-music">Food & Music</a>
+        <a href="#travel-time">Travel Time</a>
     </nav>
 
-    <section id="history" class="fade-in">
+    <section id="history">
         <h2>History of Auce</h2>
-        <p>Auce has a rich historical background dating back to the 15th century. This town was originally part of the Duchy of Courland and Semigallia and later came under Russian Empire rule. In 1920, Latvia gained independence, and Auce became a part of the Latvian state. Its historical buildings and local architecture reflect the town’s diverse past, blending Latvian and Baltic German influences.</p>
+        <p>Auce's history dates back to the 15th century when it was part of the Duchy of Courland and Semigallia. Over centuries, it transitioned under various powers, including the Russian Empire and independent Latvia in the 20th century. The town retains its historical charm with buildings reflecting its Baltic and Latvian heritage.</p>
     </section>
 
-    <section id="geography" class="fade-in">
+    <section id="geography">
         <h2>Geography</h2>
-        <p>Located in southern Latvia, Auce is surrounded by scenic landscapes with flat farmlands, small forests, and natural rivers. The nearby Lielupe River flows through the area, providing picturesque spots ideal for nature lovers. Auce's position near the Lithuanian border also makes it an interesting place for cross-border visitors.</p>
+        <p>Auce is located in the Zemgale region, known for its fertile lands and natural beauty. The town is surrounded by flat farmlands, small forests, and the picturesque Lielupe River. Its proximity to the Lithuanian border adds to its geographic appeal for visitors.</p>
     </section>
 
-    <section id="getting-there" class="fade-in">
+    <section id="getting-there">
         <h2>How to Reach Auce</h2>
-        <p><b>By Car:</b> Drive about 1.5 hours from Riga on the A9 highway.</p>
-        <p><b>By Train:</b> Take a train from Riga to Jelgava, then transfer to Auce.</p>
-        <p><b>By Bus:</b> Buses are available from Riga, offering a comfortable ride with countryside views.</p>
+        <p><b>By Car:</b> Drive via the A9 highway from Riga to reach Auce in about 1.5 hours.</p>
+        <p><b>By Train:</b> Take a train from Riga to Jelgava, then transfer to a connecting train or bus to Auce.</p>
+        <p><b>By Bus:</b> Direct buses from Riga to Auce offer a comfortable and scenic journey.</p>
     </section>
 
-    <section id="tourist-attractions" class="fade-in">
+    <section id="tourist-attractions">
         <h2>Tourist Attractions</h2>
         <ul>
-            <li><b>Auce Old Town:</b> Explore historical buildings and charming streets.</li>
-            <li><b>Auce Manor:</b> A beautiful manor with gardens and a tranquil environment.</li>
-            <li><b>The Lielupe River:</b> Ideal for walks, bird-watching, and picnics by the water.</li>
-            <li><b>Local Museums:</b> Discover the town's history and cultural heritage through small museums.</li>
+            <li><b>Auce Old Town:</b> Stroll through historical streets and admire traditional architecture.</li>
+            <li><b>Auce Manor:</b> Visit this historic estate with beautiful gardens.</li>
+            <li><b>The Lielupe River:</b> Enjoy serene walks or picnics along this scenic river.</li>
+            <li><b>Local Museums:</b> Explore small but rich museums that celebrate Auce's culture and history.</li>
         </ul>
     </section>
 
-    <section id="weather" class="fade-in">
+    <section id="weather">
         <h2>Weather</h2>
-        <p>Auce has a temperate climate with four distinct seasons. Summers are mild, with temperatures ranging from 15°C to 25°C. Winters can be cold and snowy, with temperatures often dropping below 0°C. Spring and autumn bring moderate temperatures, making these ideal seasons for visiting.</p>
+        <p>Auce has a temperate climate. Summers are warm with temperatures ranging from 15°C to 25°C, while winters are cold and snowy, often below 0°C. Spring and autumn provide mild and pleasant conditions for visitors.</p>
     </section>
 
-    <section id="culture" class="fade-in">
+    <section id="culture">
         <h2>Culture</h2>
-        <p>The culture in Auce is a blend of Latvian and German influences. Traditional Latvian festivals, such as Jāņi (Midsummer), are widely celebrated with folk music and dance. Locals also participate in seasonal harvest festivals and craft fairs. The town maintains traditional customs and encourages cultural preservation.</p>
+        <p>Auce’s cultural heritage is a blend of Latvian and Baltic traditions. Local festivals such as Midsummer celebrations, folk music performances, and craft fairs showcase the town’s rich history and vibrant community spirit.</p>
     </section>
 
-    <section id="food-music" class="fade-in">
+    <section id="food-music">
         <h2>Food & Music</h2>
-        <p>Auce offers traditional Latvian dishes, including <i>grey peas with bacon</i> and <i>rye bread</i>. These dishes are hearty and flavorful, often featuring locally sourced ingredients. Music in Auce is an integral part of local life, with folk music played during festivals and gatherings. The <i>kokle</i>, a traditional Latvian instrument, is often used to perform beautiful melodies unique to Latvia.</p>
+        <p>Enjoy traditional Latvian cuisine, including hearty dishes like grey peas with bacon and freshly baked rye bread. Music plays a vital role in local culture, with folk songs and the use of the traditional kokle instrument during festivals and events.</p>
     </section>
 
-    <footer>
-        <p>Travel times: Riga to Auce - 1.5 hours by car | Vilnius to Auce - 3 hours by car.</p>
-        <p>&copy; 2024 Auce Tourism Board</p>
-    </footer>
+    <section id="travel-time">
+        <h2>Travel Time</h2>
+        <p><b>From Riga:</b> 1.5 hours by car or approximately 2 hours by train and bus.</p>
+        <p><b>From Vilnius:</b> About 3 hours by car, making Auce a convenient destination for travelers from Lithuania.</p>
+    </section>
 
 </body>
 </html>
