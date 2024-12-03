@@ -25,12 +25,10 @@
             font-size: 3em;
             letter-spacing: 2px;
             margin: 0;
-            animation: popIn 1s ease-out;
         }
         header p {
             font-size: 1.4em;
             margin: 10px 0 0;
-            animation: fadeIn 1.5s ease-out;
         }
 
         nav {
@@ -63,9 +61,6 @@
             background: white;
             border-radius: 15px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transform: perspective(1000px) translateY(30px) rotateX(-1deg);
-            opacity: 0;
-            transition: transform 0.5s, opacity 0.5s;
         }
         section h2 {
             color: #641220;
@@ -84,37 +79,6 @@
         }
         section ul li {
             margin-bottom: 10px;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px) rotateX(-3deg);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) rotateX(0);
-            }
-        }
-
-        @keyframes popIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         section:nth-child(even) {
