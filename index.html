@@ -147,21 +147,68 @@
         <p>Your journey to history, culture, and beauty begins here.</p>
     </header>
 
-    <nav>
-        <a href="#tourist-attractions">Tourist Attractions</a>
-        <a href="#getting-there">How to Reach</a>
-        <a href="#travel-time">Travel Time</a>
-        <a href="#weather">Weather</a>
-        <a href="#culture">Culture</a>
-        <a href="#history">History of Auce</a>
-        <a href="#food-music">Food & Music</a>
-        <a href="#geography">Geography</a>
-        <a href="#events-festivals">Events & Festivals</a>
-        <a href="#economy">Economy</a>
-        <a href="#education">Education</a>
-        <a href="#accommodation">Accommodation</a>
-        <a href="#nature">Nature & Outdoor Activities</a>
-    </nav>
+    <nav id="navigation">
+    <a href="#tourist-attractions">Tourist Attractions</a>
+    <a href="#getting-there">How to Reach</a>
+    <a href="#travel-time">Travel Time</a>
+    <a href="#weather">Weather</a>
+    <a href="#culture">Culture</a>
+    <a href="#history">History of Auce</a>
+    <a href="#food-music">Food & Music</a>
+    <a href="#geography">Geography</a>
+    <a href="#events-festivals">Events & Festivals</a>
+    <a href="#economy">Economy</a>
+    <a href="#education">Education</a>
+    <a href="#accommodation">Accommodation</a>
+    <a href="#nature">Nature & Outdoor Activities</a>
+</nav>
+
+<style>
+    nav {
+        background: #900C3F;
+        display: flex;
+        justify-content: flex-start;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        white-space: nowrap;
+        padding: 10px 0;
+    }
+    nav a {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        transition: color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+        color: #DAA520;
+        transform: scale(1.1);
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+</style>
+
+<script>
+    const nav = document.getElementById('navigation');
+    const scrollSpeed = 20;
+    nav.addEventListener('mousemove', (e) => {
+        const { offsetX, target } = e;
+        const scrollOffset = 50; // Distance from edge to activate scroll
+        if (offsetX < scrollOffset) {
+            nav.scrollBy({ left: -scrollSpeed, behavior: 'smooth' });
+        }
+
+        if (offsetX > target.offsetWidth - scrollOffset) {
+            nav.scrollBy({ left: scrollSpeed, behavior: 'smooth' });
+        }
+    });
+</script>
 
     <section id="tourist-attractions">
         <h2>Tourist Attractions</h2>
