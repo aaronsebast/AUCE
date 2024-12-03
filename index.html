@@ -21,14 +21,12 @@
             padding: 60px 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-
         header h1 {
             font-size: 3em;
             letter-spacing: 2px;
             margin: 0;
             animation: popIn 1s ease-out;
         }
-
         header p {
             font-size: 1.4em;
             margin: 10px 0 0;
@@ -44,7 +42,6 @@
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -54,11 +51,9 @@
             text-transform: uppercase;
             transition: color 0.3s, transform 0.3s;
         }
-
         nav a:hover {
             color: #DAA520;
             transform: scale(1.1);
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         }
 
         section {
@@ -68,26 +63,25 @@
             background: white;
             border-radius: 15px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) translateY(0) rotateX(0);
+            opacity: 1;
+            transition: transform 0.5s, opacity 0.5s;
         }
-
         section h2 {
             color: #641220;
             margin-bottom: 15px;
             font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
-
         section p, section ul {
             font-size: 1.2em;
             line-height: 1.8;
             margin-bottom: 15px;
         }
-
         section ul {
             list-style: square;
             padding-left: 20px;
         }
-
         section ul li {
             margin-bottom: 10px;
         }
@@ -127,6 +121,10 @@
             background: linear-gradient(to right, #f7f7f7, #fff);
         }
 
+        nav a:hover {
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
         section:hover {
             transform: perspective(1000px) rotateY(1deg) scale(1.02);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -139,32 +137,6 @@
             height: 4px;
             background: #DAA520;
             margin: 20px auto 0;
-        }
-
-        /* Tourist Attractions Section */
-        #tourist-attractions {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        #tourist-attractions img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        #tourist-attractions .attraction {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        section {
-            opacity: 1;
-            animation: slideUp 1s ease-in-out;
         }
     </style>
 </head>
@@ -184,107 +156,136 @@
         <a href="#history">History of Auce</a>
         <a href="#food-music">Food & Music</a>
         <a href="#geography">Geography</a>
-        <a href="#events-festivals">Events & Festivals</a>
-        <a href="#economy">Economy</a>
-        <a href="#education">Education</a>
-        <a href="#accommodation">Accommodation</a>
-        <a href="#nature">Nature & Outdoor Activities</a>
+        <a href="#accommodations">Accommodations</a>
+        <a href="#events-calendar">Events Calendar</a>
+        <a href="#local-businesses">Local Businesses</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visitor-information">Visitor Information</a>
+        <a href="#contact-us">Contact Us</a>
     </nav>
-    
-   <section id="tourist-attractions">
-    <h2>Tourist Attractions</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <img src="auceoldtown.png" alt="Auce Old Town" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);">
-            <p><b>Auce Old Town:</b> Explore cobblestone streets, traditional Latvian architecture, and quaint cafés offering local delicacies.</p>
-        </div>
 
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <img src="aucemanor.jpg" alt="Auce Manor" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);">
-            <p><b>Auce Manor:</b> This 19th-century manor is surrounded by lush gardens, ideal for history lovers and photography enthusiasts.</p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <img src="aucepark.jpg" alt="Nature Parks in Auce" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);">
-            <p><b>Nature Parks:</b> Several parks around Auce offer trails, wildlife observation, and scenic spots for family outings.</p>
-        </div>
-    </div>
-</section>
-
+    <section id="tourist-attractions">
+        <h2>Tourist Attractions</h2>
+        <ul>
+            <li><b>Auce Old Town:</b> A journey through cobblestone streets and historic architecture.</li>
+            <li><b>Auce Manor:</b> An elegant estate surrounded by manicured gardens.</li>
+            <li><b>The Lielupe River:</b> A haven for nature enthusiasts and tranquility seekers.</li>
+            <li><b>Local Museums:</b> Discover unique artifacts and stories from Auce's past.</li>
+        </ul>
+    </section>
 
     <section id="getting-there">
         <h2>How to Reach Auce</h2>
-        <p>Auce is well-connected by road and rail. Here’s how you can reach:</p>
+        <p>Auce is accessible by various modes of transportation:</p>
         <ul>
-            <li><b>By Car:</b> A scenic drive from Riga takes approximately 1.5 hours. Ample parking is available in and around the town.</li>
-            <li><b>By Train:</b> Rail connections from Riga to Jelgava, followed by a local service to Auce, provide a hassle-free travel experience.</li>
-            <li><b>By Bus:</b> Regular buses operate between major Latvian cities and Auce, ensuring affordability and convenience.</li>
-            <li><b>By Air:</b> For international visitors, Riga International Airport is the nearest major airport, followed by a drive or train journey to Auce.</li>
+            <li><b>By Car:</b> A scenic 1.5-hour drive from Riga on the A9 highway.</li>
+            <li><b>By Train:</b> Take a train from Riga to Jelgava, then connect to Auce via bus or train.</li>
+            <li><b>By Bus:</b> Regular buses operate between Riga and Auce, offering a budget-friendly option.</li>
         </ul>
     </section>
 
     <section id="travel-time">
         <h2>Travel Time</h2>
         <p><b>From Riga:</b> 1.5 hours by car or approximately 2 hours by train and bus.</p>
-        <p><b>From Vilnius:</b> Around 3 hours by car, crossing the Latvian border into Zemgale region.</p>
-        <p><b>From Tallinn:</b> A longer trip of approximately 4.5 hours by car or train, offering a glimpse of the Baltic countryside.</p>
+        <p><b>From Vilnius:</b> A 3-hour journey by car, making it easily accessible for cross-border visitors.</p>
     </section>
 
     <section id="weather">
         <h2>Weather</h2>
-        <p>Auce enjoys a temperate climate with four distinct seasons:</p>
-        <ul>
-            <li><b>Spring:</b> The blooming landscapes and mild temperatures (10°C-15°C) make it ideal for hiking and outdoor photography.</li>
-            <li><b>Summer:</b> Sunny and warm, with temperatures ranging between 20°C and 25°C. Perfect for river activities and local festivals.</li>
-            <li><b>Autumn:</b> Golden leaves and cooler days (10°C-15°C) create a picturesque setting for nature walks and cultural events.</li>
-            <li><b>Winter:</b> Snow-covered landscapes, with temperatures ranging from -5°C to -10°C, offer opportunities for winter sports and a cozy holiday atmosphere.</li>
-        </ul>
+        <p>Auce enjoys a temperate climate with distinct seasons. Summers are warm (15°C-25°C), perfect for exploring. Winters are snowy, with temperatures often dropping below freezing. Spring and autumn offer mild weather, ideal for sightseeing.</p>
     </section>
 
     <section id="culture">
         <h2>Culture</h2>
-        <p>Auce is a vibrant community where Latvian traditions meet modern living. Local art galleries, theater performances, and traditional dance exhibitions offer a rich cultural experience.</p>
+        <p>Auce is a hub of Latvian traditions, from folklore to modern festivities. Experience traditional Midsummer celebrations, immerse in folk music, and explore craftsmanship passed down through generations.</p>
     </section>
 
     <section id="history">
         <h2>History of Auce</h2>
-        <p>Founded in the 13th century, Auce has a rich history steeped in Latvian heritage. The town has witnessed centuries of evolution, from medieval fortifications to a modern-day town filled with historical sites.</p>
+        <p>Auce's origins trace back to medieval times when it was part of the Duchy of Courland and Semigallia. Its rich heritage includes centuries of trade, agriculture, and cultural exchange. The town endured through occupations and independence struggles, shaping its unique identity.</p>
     </section>
 
     <section id="food-music">
         <h2>Food & Music</h2>
-        <p>Latvian cuisine is rich with hearty flavors. Try the famous <i>piragi</i> (filled pastries), <i>grey peas with bacon</i>, and enjoy local folk music festivals.</p>
+        <p>Indulge in local cuisine, including hearty soups, smoked meats, and rye bread. Music is central to Auce's identity, with folk instruments like the kokle and contemporary performances making every event special.</p>
     </section>
 
     <section id="geography">
         <h2>Geography</h2>
-        <p>Auce is located in the Zemgale region, surrounded by lush forests, rivers, and small lakes. Its scenic landscapes provide a haven for nature lovers.</p>
+        <p>Nestled in Latvia's Zemgale region, Auce boasts fertile lands and scenic landscapes. Surrounded by rolling hills and dotted with lush forests, it's an idyllic location. The nearby Lielupe River adds to its charm, offering visitors picturesque views and outdoor activities.</p>
     </section>
 
-    <section id="events-festivals">
-        <h2>Events & Festivals</h2>
-        <p>Auce hosts several annual festivals such as the Auce Folk Festival and the Summer Carnival, offering visitors a blend of local music, art, and cuisine.</p>
+        <section id="accommodations">
+        <h2>Accommodations</h2>
+        <p>Auce offers a variety of comfortable places to stay:</p>
+        <ul>
+            <li><b>Hotels and Guesthouses:</b> Find the perfect place for a relaxing stay.</li>
+            <li><b>Booking Information:</b> Contact details and booking options for accommodations.</li>
+        </ul>
     </section>
 
-    <section id="economy">
-        <h2>Economy</h2>
-        <p>The economy of Auce is largely based on agriculture, small industries, and tourism, with many local businesses focusing on organic farming and artisanal goods.</p>
+    <section id="events-calendar">
+        <h2>Events Calendar</h2>
+        <p>Discover the vibrant events happening in Auce:</p>
+        <ul>
+            <li><b>Annual Festivals:</b> Details of major events and festivals.</li>
+            <li><b>Local Events:</b> Regular events like markets, exhibitions, and cultural performances.</li>
+        </ul>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <p>Auce has several primary and secondary schools, offering quality education for children. The town is also home to vocational schools, fostering skilled trades.</p>
+    <section id="local-businesses">
+        <h2>Local Businesses</h2>
+        <p>Explore the local businesses in Auce:</p>
+        <ul>
+            <li><b>Shops and Boutiques:</b> Directory of local shops offering crafts and products.</li>
+            <li><b>Dining Options:</b> Restaurants, cafes, and eateries serving local cuisine.</li>
+        </ul>
     </section>
 
-    <section id="accommodation">
-        <h2>Accommodation</h2>
-        <p>Visitors can choose from a range of accommodations, from cozy guesthouses to modern hotels, ensuring a comfortable stay in Auce.</p>
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <p>Visuals showcasing the beauty and culture of Auce:</p>
+        <ul>
+            <li><b>Photos and Videos:</b> Stunning images and videos of Auce.</li>
+            <li><b>Virtual Tours:</b> Interactive tours of major attractions and landmarks.</li>
+        </ul>
     </section>
 
-    <section id="nature">
-        <h2>Nature & Outdoor Activities</h2>
-        <p>The surrounding forests and rivers provide a perfect setting for hiking, kayaking, and cycling. Wildlife enthusiasts will enjoy birdwatching in the nearby nature reserves.</p>
+    <section id="visitor-information">
+        <h2>Visitor Information</h2>
+        <p>Essential information for visitors:</p>
+        <ul>
+            <li><b>Tourist Office:</b> Contact information and services offered.</li>
+            <li><b>Guided Tours:</b> Available tours and how to book them.</li>
+        </ul>
     </section>
+
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for more information:</p>
+        <ul>
+            <li><b>Inquiries:</b> Form for visitors to ask questions or request information.</li>
+            <li><b>Social Media Links:</b> Connect with Auce on social media platforms.</li>
+        </ul>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'translateY(0) rotateX(0)';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 
 </body>
 </html>
