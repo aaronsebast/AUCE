@@ -68,9 +68,6 @@
             background: white;
             border-radius: 15px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transform: perspective(1000px) translateY(30px) rotateX(-1deg);
-            opacity: 0;
-            transition: transform 0.5s, opacity 0.5s;
         }
 
         section h2 {
@@ -163,6 +160,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        section {
+            opacity: 1;
+            animation: slideUp 1s ease-in-out;
         }
     </style>
 </head>
