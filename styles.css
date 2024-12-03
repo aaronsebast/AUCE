@@ -1,0 +1,15 @@
+#language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+#language-selector img {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+#language-selector img:hover {
+    transform: scale(1.2);
+}
