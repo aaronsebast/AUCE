@@ -1,15 +1,11 @@
-#language-selector {
+#language-switcher {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 100;
+    z-index: 1000;
 }
-
-#language-selector img {
-    margin-left: 10px;
-    transition: transform 0.3s ease;
-}
-
-#language-selector img:hover {
-    transform: scale(1.2);
+#language-switcher img {
+    cursor: pointer;
+    width: 30px;
+    margin-right: 10px;
 }
