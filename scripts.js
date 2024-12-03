@@ -1,55 +1,47 @@
-const englishFlag = document.getElementById('english-flag');
-const latvianFlag = document.getElementById('latvian-flag');
+document.getElementById('english').addEventListener('click', () => {
+    setLanguage('en');
+});
 
+document.getElementById('latvian').addEventListener('click', () => {
+    setLanguage('lv');
+});
 
-const translations = {
-    "english": {
-        "site-title": "Welcome to Auce, Latvia",
-        "site-description": "Your journey to history, culture, and beauty begins here.",
-        "tourist-attractions-title": "Tourist Attractions",
-        "getting-there-title": "How to Reach Auce",
-        "travel-time-title": "Travel Time",
-        "weather-title": "Weather",
-        "culture-title": "Culture",
-        "history-title": "History of Auce",
-        "food-music-title": "Food & Music",
-        "geography-title": "Geography",
-        "events-festivals-title": "Events & Festivals",
-        "economy-title": "Economy",
-        "education-title": "Education",
-        "accommodation-title": "Accommodation",
-        "nature-title": "Nature & Outdoor Activities"
-    },
-    "latvian": {
-        "site-title": "Laipni lūdzam Auce, Latvija",
-        "site-description": "Jūsu ceļojums uz vēsturi, kultūru un skaistumu sākas šeit.",
-        "tourist-attractions-title": "Tūrisma apskates objekti",
-        "getting-there-title": "Kā nokļūt Auce",
-        "travel-time-title": "Ceļojuma laiks",
-        "weather-title": "Laika apstākļi",
-        "culture-title": "Kultūra",
-        "history-title": "Auces vēsture",
-        "food-music-title": "Pārtika un mūzika",
-        "geography-title": "Ģeogrāfija",
-        "events-festivals-title": "Pasākumi un festivāli",
-        "economy-title": "Ekonomika",
-        "education-title": "Izglītība",
-        "accommodation-title": "Naktsmītnes",
-        "nature-title": "Daba un ārējās aktivitātes"
-    }
-};
-
-
-function changeLanguage(language) {
-    Object.keys(translations[language]).forEach(key => {
-        document.getElementById(key).textContent = translations[language][key];
-    });
+function setLanguage(language) {
+    // Store the chosen language in localStorage
     localStorage.setItem('language', language);
+    translatePage(language);
 }
 
+function translatePage(language) {
+    const translations = {
+        en: {
+            "Welcome to Auce, Latvia": "Welcome to Auce, Latvia",
+            "Your journey to history, culture, and beauty begins here.": "Your journey to history, culture, and beauty begins here.",
+            "Tourist Attractions": "Tourist Attractions",
+            "How to Reach Auce": "How to Reach Auce",
+            "Travel Time": "Travel Time",
+            // Add other English translations here
+        },
+        lv: {
+            "Welcome to Auce, Latvia": "Laipni lūdzam Auces, Latvijā",
+            "Your journey to history, culture, and beauty begins here.": "Jūsu ceļojums uz vēsturi, kultūru un skaistumu sākas šeit.",
+            "Tourist Attractions": "Tūrisma apskates objekti",
+            "How to Reach Auce": "Kā nokļūt Auce",
+            "Travel Time": "Ceļojuma laiks",
+            // Add other Latvian translations here
+        }
+    };
 
-englishFlag.addEventListener('click', () => changeLanguage('english'));
-latvianFlag.addEventListener('click', () => changeLanguage('latvian'));
+    // Update the text of all elements based on the selected language
+    document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        el.textContent = translations[language][key] || el.textContent;
+    });
+}
 
-const savedLanguage = localStorage.getItem('language') || 'english';
-changeLanguage(savedLanguage);
+// On page load, check the stored language preference and apply it
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('language') || 'en';
+    translatePage(savedLanguage);
+});
+
