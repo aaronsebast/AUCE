@@ -138,6 +138,40 @@
             background: #DAA520;
             margin: 20px auto 0;
         }
+        nav {
+    background: #900C3F;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    scroll-behavior: smooth;
+}
+
+nav .nav-container {
+    display: inline-flex;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #DAA520;
+    transform: scale(1.1);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
     </style>
 </head>
 <body>
@@ -147,7 +181,8 @@
         <p>Your journey to history, culture, and beauty begins here.</p>
     </header>
 
-    <nav>
+   <nav>
+    <div class="nav-container">
         <a href="#tourist-attractions">Tourist Attractions</a>
         <a href="#getting-there">How to Reach</a>
         <a href="#travel-time">Travel Time</a>
@@ -162,7 +197,8 @@
         <a href="#gallery">Gallery</a>
         <a href="#visitor-information">Visitor Information</a>
         <a href="#contact-us">Contact Us</a>
-    </nav>
+    </div>
+</nav>
 
    <section id="tourist-attractions">
     <h2>Tourist Attractions</h2>
