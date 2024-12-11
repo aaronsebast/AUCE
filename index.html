@@ -138,25 +138,19 @@
             background: #DAA520;
             margin: 20px auto 0;
         }
-        nav {
+       nav {
     background: #900C3F;
-    overflow-x: auto;
-    white-space: nowrap;
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Keeps links on a single line */
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    scroll-behavior: smooth;
-}
-
-nav .nav-container {
-    display: inline-flex;
-    gap: 10px;
-    padding: 0 10px;
+    scrollbar-width: thin; /* For modern browsers, makes scrollbar thinner */
 }
 
 nav a {
-    display: inline-block;
     color: white;
     text-decoration: none;
     padding: 15px 20px;
@@ -164,12 +158,24 @@ nav a {
     font-size: 1.2em;
     text-transform: uppercase;
     transition: color 0.3s, transform 0.3s;
+    display: inline-block; /* Ensures inline behavior for scrolling */
 }
 
 nav a:hover {
     color: #DAA520;
     transform: scale(1.1);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+nav::-webkit-scrollbar {
+    height: 6px;
+}
+nav::-webkit-scrollbar-thumb {
+    background: #DAA520;
+    border-radius: 10px;
+}
+nav::-webkit-scrollbar-track {
+    background: #641220;
 }
 
     </style>
@@ -182,24 +188,22 @@ nav a:hover {
     </header>
 
    <nav>
-    <div class="nav-container">
-        <a href="#tourist-attractions">Tourist Attractions</a>
-        <a href="#getting-there">How to Reach</a>
-        <a href="#travel-time">Travel Time</a>
-        <a href="#weather">Weather</a>
-        <a href="#culture">Culture</a>
-        <a href="#history">History of Auce</a>
-        <a href="#food-music">Food & Music</a>
-        <a href="#geography">Geography</a>
-        <a href="#accommodations">Accommodations</a>
-        <a href="#events-calendar">Events Calendar</a>
-        <a href="#local-businesses">Local Businesses</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#visitor-information">Visitor Information</a>
-        <a href="#contact-us">Contact Us</a>
-    </div>
+    <a href="#tourist-attractions">Tourist Attractions</a>
+    <a href="#getting-there">How to Reach</a>
+    <a href="#travel-time">Travel Time</a>
+    <a href="#weather">Weather</a>
+    <a href="#culture">Culture</a>
+    <a href="#history">History of Auce</a>
+    <a href="#food-music">Food & Music</a>
+    <a href="#geography">Geography</a>
+    <a href="#accommodations">Accommodations</a>
+    <a href="#events-calendar">Events Calendar</a>
+    <a href="#local-businesses">Local Businesses</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visitor-information">Visitor Information</a>
+    <a href="#contact-us">Contact Us</a>
 </nav>
-
+    
    <section id="tourist-attractions">
     <h2>Tourist Attractions</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
